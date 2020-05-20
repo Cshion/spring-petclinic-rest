@@ -12,7 +12,7 @@ node {
             steps.sh "mvn test"
         }
     }catch(e){
-        throw
+        throw e
     }finally{
         junit 'target/surefire-reports/TEST-*.xml'
     }
