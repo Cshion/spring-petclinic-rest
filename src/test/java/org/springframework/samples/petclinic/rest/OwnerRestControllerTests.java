@@ -124,7 +124,7 @@ public class OwnerRestControllerTests {
             .andExpect(status().isOk())
             .andExpect(content().contentType("application/json;charset=UTF-8"))
             .andExpect(jsonPath("$.id").value(1))
-            .andExpect(jsonPath("$.firstName").value("George"));
+            .andExpect(jsonPath("$.firstName").value("Maria"));
     }
 
     @Test
