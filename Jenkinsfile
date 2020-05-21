@@ -5,7 +5,6 @@ node {
     }
 
     stage("Build"){
-        
         steps.sh "mvn test-compile"
     }
 
@@ -16,7 +15,7 @@ node {
             throw e
         }finally{
             junit 'target/surefire-reports/TEST-*.xml'
-            jacoco
+            jacoco()
         }
     }
     
