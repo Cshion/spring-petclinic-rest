@@ -39,7 +39,7 @@ node {
 
     }
 
-    stage("Approval to Production?"){
+    stage("Deploy to Production?"){
 
     }
 
