@@ -8,7 +8,7 @@ node {
         steps.sh "mvn test-compile"
     }
 
-    stage("Unit Test"){
+    stage("Unit Testing"){
         try{
             steps.sh "mvn test"
         }catch(e){
@@ -17,6 +17,34 @@ node {
             junit 'target/surefire-reports/TEST-*.xml'
             jacoco()
         }
+    }   
+
+    stage("Static Analysis"){
+        //Sonarqube
+    }
+
+    stage("Static Security Testing"){
+        //Fortify
+    }   
+
+    stage("Software Composition Analysis"){
+        //Snyk
+    }
+
+    stage("Deploy to Staging "){
+
+    }
+
+    stage("Integration Tests"){
+
+    }
+
+    stage("Approval to Production?"){
+
+    }
+
+    stage("Deploy to Production"){
+
     }
     
 }
