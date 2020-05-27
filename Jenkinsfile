@@ -1,4 +1,5 @@
 @Library("DevopsSharedLibrary")
+import org.jenkins101.DevopsSharedLibrary
 
 def devopsSharedLibrary = new DevopsSharedLibrary(this)
 
