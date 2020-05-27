@@ -1,22 +1,18 @@
-node {
+@Library("devopsSharedLibrary")
 
+def devopsSharedLibrary = new DevopSharedLibrary()
+
+node {
     stage("Preparation"){
         checkout scm
     }
 
     stage("Build"){
-        sh "mvn -B -DskipTests clean package"
+        devopsSharedLibrary.build()
     }
 
     stage("Unit Testing"){
-        try{
-            sh "mvn test"
-        }catch(e){
-            throw e
-        }finally{
-            junit 'target/surefire-reports/TEST-*.xml'
-            jacoco()
-        }
+        devopsSharedLibrary.unitTest();
     }   
 
     stage("Archive Artifacts"){
@@ -24,7 +20,7 @@ node {
     }
 
     stage("Deploy"){
-
+        devopsSharedLibrary.deployApplication();
     }
     
 }
