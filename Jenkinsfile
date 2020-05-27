@@ -10,7 +10,7 @@ node {
 
     stage("Unit Testing"){
         try{
-            sh "mvn test"
+            //sh "mvn test"
         }catch(e){
             throw e
         }finally{
