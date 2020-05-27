@@ -1,6 +1,6 @@
 @Library("DevopsSharedLibrary")
 
-def devopsSharedLibrary = new DevopSharedLibrary(this)
+def devopsSharedLibrary = new DevopsSharedLibrary(this)
 
 node {
     stage("Preparation"){
