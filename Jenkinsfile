@@ -12,6 +12,10 @@ node {
        
     }   
 
+    stage("Archive Artifacts"){
+        
+    }
+
     stage("Deploy"){
 
     }
