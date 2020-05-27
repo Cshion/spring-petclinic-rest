@@ -10,12 +10,12 @@ node {
 
     stage("Unit Testing"){
         try{
-            //sh "mvn test"
+            sh "mvn test"
         }catch(e){
             throw e
         }finally{
-            //junit 'target/surefire-reports/TEST-*.xml'
-            //jacoco()
+            junit 'target/surefire-reports/TEST-*.xml'
+            jacoco()
         }
     }   
 
