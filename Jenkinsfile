@@ -14,8 +14,8 @@ node {
         }catch(e){
             throw e
         }finally{
-            junit 'target/surefire-reports/TEST-*.xml'
-            jacoco()
+            //junit 'target/surefire-reports/TEST-*.xml'
+            //jacoco()
         }
     }   
 
