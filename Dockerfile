@@ -1,6 +1,8 @@
 FROM openjdk:8-jdk-alpine
 ARG JAR_FILE_PATH
 
-COPY ${JAR_FILE} app.jar
+RUN mkdir -p /opt/application
 
-ENTRYPOINT ["java","-jar","/app.jar"]
+COPY ${JAR_FILE_PATH} /opt/application/app.jar
+
+ENTRYPOINT ["java","-jar","/opt/application/app.jar"]
