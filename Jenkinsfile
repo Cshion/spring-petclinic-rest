@@ -29,15 +29,10 @@ node {
         def jarPath    = "target/${appName}-${appVersion}.jar"
         
         sh "docker build --no-cache --build-arg JAR_FILE_PATH=${jarPath} -t demo/${appName}:${appVersion} ."
-
-        //Simulacion de despliegue
-        try{
-            sh "docker stop ${appName}"
-            sh "docker rm ${appName}"
-        }catch(e){
-            echo "$e"
-        }
         
+        //Simulacion de despliegue
+        sh "docker stop ${appName}"
+        sh "docker rm ${appName}"
         sh "docker run --name ${appName} -d -p 9966:9966 demo/${appName}:${appVersion}"
     }
     
