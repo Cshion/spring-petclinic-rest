@@ -5,8 +5,9 @@ node {
     }
 
     stage("Build"){
-        steps.sh "mvn test-compile"
+        sh "mvn -B -DskipTests clean package"
     }
+
 
     stage("Unit Testing"){
        
