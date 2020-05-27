@@ -5,7 +5,7 @@ node {
     }
 
     stage("Build"){
-        sh "mvn compile test-compile"
+        sh "mvn -B -DskipTests clean package"
     }
 
     stage("Unit Testing"){
