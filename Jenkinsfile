@@ -24,7 +24,11 @@ node {
     }
 
     stage("Deploy"){
+        def appName    = sh(script: "mvn -q -N org.codehaus.mojo:exec-maven-plugin:1.3.1:exec -Dexec.executable='echo' -Dexec.args='\${project.artifactId}'", returnStdout: true).trim()
+        def appVersion = sh(script: "mvn -q -N org.codehaus.mojo:exec-maven-plugin:1.3.1:exec -Dexec.executable='echo' -Dexec.args='\${project.version}'", returnStdout: true).trim()
+        def jarPath    = "target/${appName}-${appVersion}.jar"
 
+        echo "${jarPath}"
     }
     
 }
