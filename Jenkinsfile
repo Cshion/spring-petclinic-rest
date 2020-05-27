@@ -12,8 +12,8 @@ node {
        
     }   
 
-    stage("Deploy to Production"){
-        
+    stage("Deploy"){
+
     }
     
 }
