@@ -32,12 +32,13 @@ node {
 
         //Simulacion de despliegue
         try{
-            sh "docker stop ${appName}-${appVersion}"
+            sh "docker stop ${appName}"
+            sh "docker rm ${appName}"
         }catch(e){
             echo "$e"
         }
         
-        sh "docker run --name ${appName}-${appVersion} -d -p 9966:9966 demo/${appName}:${appVersion}"
+        sh "docker run --name ${appName} -d -p 9966:9966 demo/${appName}:${appVersion}"
     }
     
 }
